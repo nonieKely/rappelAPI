@@ -2,6 +2,9 @@ openapi: 3.0.0
 info:
   title: Prog3 - Review API1
   version: 1.0.0
+servers:
+  - url: https://prog3_server.com
+    description: server for tests
 paths:
   /books:
     get:
