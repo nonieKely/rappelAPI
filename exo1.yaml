@@ -57,6 +57,18 @@ paths:
       responses:
         '200':
           description: Book deleted successfully
+  /authors:
+    get:
+      summary: Get a list of authors
+      parameters:
+        - name: authorName
+          in: query
+          description: Filter authors by name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfuly got a list of authors
 components:
   schemas:
     Book:
