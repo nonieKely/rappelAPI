@@ -8,41 +8,19 @@ servers:
 paths:
   /group:
     get:
-      summary: Get a list of books
+      summary: Get a list of groups
       parameters:
-        - name: bookName
+        - name: groupName
           in: query
-          description: Filter books by name
+          description: Filter group by name
           schema:
             type: string
-        - name: startDate
-          in: query
-          description: Start date of release date interval
-          schema:
-            type: string
-            format: date
-        - name: endDate
-          in: query
-          description: End date of release date interval
-          schema:
-            type: string
-            format: date
       responses:
         '200':
-          description: Successfuly got the list of books
-    post:
-      summary: Add a new book
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/group'
-      responses:
-        '201':
-          description: Book created
+          description: Successfuly got the list of groups
+
     put:
-      summary: Update book information
+      summary: Update the list of groups
       requestBody:
         required: true
         content:
@@ -52,11 +30,19 @@ paths:
       responses:
         '200':
           description: Book updated successfully
-    delete:
-      summary: Delete a book by ID
-      responses:
-        '200':
-          description: Book deleted successfully
+  /groupe/year:
+    get : 
+      summary : Get a list of groups by year
+      parameters : 
+      - name: groupeYear
+        in: query
+        description: Filter group by year
+        schema : 
+          type: string
+      responses: 
+        '200' : 
+          description: Successfuly got the list of groups
+  
 
   /student:
     get:
