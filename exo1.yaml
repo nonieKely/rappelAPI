@@ -1,0 +1,34 @@
+openapi: 3.0.0
+info:
+  title: Prog3 - Review API1
+  version: 1.0.0
+
+components:
+  schemas:
+    Book:
+      type: object
+      properties:
+        id:
+          type: integer
+        bookName:
+          type: string
+        author:
+          type: string
+        pageNumbers:
+          type: integer
+        topic:
+          type: string
+          enum: [ROMANCE, COMEDY, OTHER]
+        releaseDate:
+          type: string
+          format: date
+    Author:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        sex:
+          type: string
+          enum: [M, F]
