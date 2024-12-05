@@ -30,6 +30,17 @@ paths:
       responses:
         '200':
           description: Successfuly got the list of books
+    post:
+      summary: Add a new book
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Book'
+      responses:
+        '201':
+          description: Book created
 components:
   schemas:
     Book:
