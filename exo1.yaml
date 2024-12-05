@@ -4,9 +4,9 @@ info:
   version: 1.0.0
 servers:
   - url: https://prog3_server.com
-    description: server for tests
+    description: Mock server for testing
 paths:
-  /books:
+  /group:
     get:
       summary: Get a list of books
       parameters:
@@ -37,7 +37,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Book'
+              $ref: '#/components/schemas/group'
       responses:
         '201':
           description: Book created
@@ -48,7 +48,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Book'
+              $ref: '#/components/schemas/group'
       responses:
         '200':
           description: Book updated successfully
@@ -57,6 +57,7 @@ paths:
       responses:
         '200':
           description: Book deleted successfully
+
   /authors:
     get:
       summary: Get a list of authors
@@ -99,23 +100,24 @@ paths:
 
 components:
   schemas:
-    Book:
+    group:
       type: object
       properties:
         id:
           type: integer
-        bookName:
+        groupName:
           type: string
-        author:
-          type: string
-        pageNumbers:
+        groupYear:
           type: integer
-        topic:
+        promotion:
           type: string
-          enum: [ROMANCE, COMEDY, OTHER]
-        releaseDate:
-          type: string
-          format: date
+          enum : [G,H,J,K]
+        studentNb:
+          type: integer
+        students:
+          type: array
+          items : student
+          
     Author:
       type: object
       properties:
