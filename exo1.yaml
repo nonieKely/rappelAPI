@@ -52,6 +52,11 @@ paths:
       responses:
         '200':
           description: Book updated successfully
+    delete:
+      summary: Delete a book by ID
+      responses:
+        '200':
+          description: Book deleted successfully
 components:
   schemas:
     Book:
