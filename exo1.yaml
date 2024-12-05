@@ -2,7 +2,31 @@ openapi: 3.0.0
 info:
   title: Prog3 - Review API1
   version: 1.0.0
-
+paths:
+  /books:
+    get:
+      summary: Get a list of books
+      parameters:
+        - name: bookName
+          in: query
+          description: Filter books by name
+          schema:
+            type: string
+        - name: startDate
+          in: query
+          description: Start date of release date interval
+          schema:
+            type: string
+            format: date
+        - name: endDate
+          in: query
+          description: End date of release date interval
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Successfuly got the list of books
 components:
   schemas:
     Book:
