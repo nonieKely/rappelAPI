@@ -69,6 +69,17 @@ paths:
       responses:
         '200':
           description: Successfuly got a list of authors
+    post:
+      summary: Add a new author
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Author'
+      responses:
+        '201':
+          description: Author added successfuly
 components:
   schemas:
     Book:
