@@ -69,3 +69,48 @@ paths:
       responses:
         '204':
           description: Group deleted
+components:
+  schemas:
+    Group:
+      type: object
+      properties:
+        id:
+          type: string
+        groupName:
+          type: string
+        groupYear:
+          type: integer
+        promotion:
+          type: string
+          enum:
+            - G
+            - H
+            - J
+            - K
+        studentNb:
+          type: integer
+        students:
+          type: array
+          items:
+            $ref: '#/components/schemas/Student'
+
+    Student:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        sex:
+          type: string
+          enum:
+            - M
+            - F
+        birthdate:
+          type: string
+          format: date
+        reference:
+          type: string
+          pattern: "^STD\\d{5}$"
+        group:
+          type: string
