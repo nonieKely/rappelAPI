@@ -144,4 +144,4 @@ components:
           type: string
           pattern: "^STD\\d{5}$"
         group:
-          type: string
+          $ref : '#/components/schemas/Group'
