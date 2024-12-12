@@ -35,3 +35,14 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Group'
+    post:
+      summary: Create a new group
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Group'
+      responses:
+        '200':
+          description: Group created
