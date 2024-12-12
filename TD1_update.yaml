@@ -35,17 +35,6 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Group'
-    post:
-      summary: Create a new group
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Group'
-      responses:
-        '200':
-          description: Group created
     put:
       summary: Update an existing group
       requestBody:
@@ -87,17 +76,6 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Student'
-    post:
-      summary: Create a new student
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Student'
-      responses:
-        '201':
-          description: Student created
     put:
       summary: Update an existing student
       requestBody:
