@@ -6,3 +6,32 @@ info:
 
 servers:
   - url: https://td1_update.com
+paths:
+  /groups:
+    get:
+      summary: Get a list of groups
+      parameters:
+        - name: groupName
+          in: query
+          description: Filter groups by name
+          schema:
+            type: string
+        - name: groupYearStart
+          in: query
+          description: Start of the year
+          schema:
+            type: integer
+        - name: groupYearEnd
+          in: query
+          description: End of the year
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: List of groups
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Group'
