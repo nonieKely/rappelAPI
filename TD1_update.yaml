@@ -87,6 +87,41 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Student'
+    post:
+      summary: Create a new student
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Student'
+      responses:
+        '201':
+          description: Student created
+    put:
+      summary: Update an existing student
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Student'
+      responses:
+        '200':
+          description: Student updated
+    delete:
+      summary: Delete a student
+      parameters:
+        - name: studentId
+          in: query
+          description: ID of the student
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Student deleted
+
 components:
   schemas:
     Group:
