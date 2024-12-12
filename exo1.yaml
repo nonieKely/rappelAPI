@@ -30,7 +30,7 @@ paths:
       responses:
         '200':
           description: Book updated successfully
-  /groupe/year:
+  /group/year:
     get : 
       summary : Get a list of groups by year
       parameters : 
@@ -46,7 +46,7 @@ paths:
 
   /student:
     get:
-      summary: Get a list of authors
+      summary: Get a list of students
       parameters:
         - name: authorName
           in: query
@@ -55,7 +55,7 @@ paths:
             type: string
       responses:
         '200':
-          description: Successfuly got a list of authors
+          description: Successfuly got a list of students
     post:
       summary: Add a new author
       requestBody:
@@ -66,7 +66,7 @@ paths:
               $ref: '#/components/schemas/student'
       responses:
         '201':
-          description: Author added successfuly
+          description: students added successfuly
     put:
       summary: Update author information
       requestBody:
@@ -77,12 +77,12 @@ paths:
               $ref: '#/components/schemas/student'
       responses:
         '200':
-          description: Author updated successfully
+          description: students updated successfully
     delete:
-      summary: Delete an author by ID
+      summary: Delete an students by ID
       responses:
         '200':
-          description: Author deleted successfully
+          description: students deleted successfully
 
 components:
   schemas:

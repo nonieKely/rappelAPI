@@ -1,0 +1,8 @@
+openapi: 3.0.3
+info:
+  title: TD1_update
+  version: 1.0.0
+  description: Mock server for tests
+
+servers:
+  - url: https://td1_update.com
