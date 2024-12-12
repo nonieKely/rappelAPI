@@ -69,6 +69,24 @@ paths:
       responses:
         '204':
           description: Group deleted
+  /students:
+    get:
+      summary: Get a list of students
+      parameters:
+        - name: studentName
+          in: query
+          description: Filter students by name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of students
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Student'
 components:
   schemas:
     Group:
