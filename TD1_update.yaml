@@ -46,3 +46,26 @@ paths:
       responses:
         '200':
           description: Group created
+    put:
+      summary: Update an existing group
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Group'
+      responses:
+        '200':
+          description: Group updated
+    delete:
+      summary: Delete a group
+      parameters:
+        - name: groupId
+          in: query
+          description: ID of the group to delete
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Group deleted
